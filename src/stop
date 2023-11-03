@@ -1,0 +1,4 @@
+#! /bash/bin
+
+docker_desktop_stop="systemctl --user stop docker-desktop" 
+$docker_desktop_stop

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EasyFinder</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
+
+    <link
+      href="{{ url_for('static', filename='assets/fonts/lato.txt') }}"
+      rel="stylesheet"
+      type="text"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/fonts/montserrat.txt') }}"
+      rel="stylesheet"
+      type="text"
+    />
+
+    <script async defer src="{{ url_for('static', filename='assets/github/button.js') }}"></script>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}"
+    />
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <link id="theme-style" rel="stylesheet" href="{{ url_for('static', filename='assets/css/theme-1.css') }}"/>
+  </head>
+
+  <body data-spy="scroll">
+    <header id="header" class="header">
+      <nav id="main-nav" class="main-nav navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a class="navbar-brand logo" href="/">
+            <span class="logo-title">easyFinder</span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-collapse"
+            aria-controls="navbar-collapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span></button
+          >
+
+          <div class="navbar-collapse collapse" id="navbar-collapse">
+            <ul id="nav-menu" class="nav navbar-nav ms-md-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/search">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/search_image">ImageSearch</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section id="promo" class="promo section offset-header">
+      <div class="container text-center">
+        <h2 class="title">easy<span class="highlight">Finder</span></h2>
+        <p class="intro">
+          Welcome to Easy Finder - reuniting loved ones through our dedicated
+          platform and advanced search tools.
+        </p>
+        <div class="btns">
+          <a
+            class="btn btn-cta-primary"
+            href="/register"
+            >Register</a
+          >
+          <a
+            class="btn btn-cta-primary"
+            href="/search"
+            >Search</a
+          >
+          <a
+            class="btn btn-cta-primary"
+            href="search_image"
+            >Image Search</a
+          >
+        </div>
+        <ul class="meta list-inline">
+          <li class="list-inline-item">
+            Created by:
+            <a href="#">Sharanya - Praneetha - Rahul</a>
+          </li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <div class="social-media-inner  text-center">
+          <ul class="list-inline ">
+            <li class="list-inline-item github-follow">
+              <a
+                class="github-button"
+                href="https://github.com"
+                >Join Us - The Missing Persons Development Initiative</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="container">
+        <h2 class="title text-center">What is easyFinder?</h2>
+        <p class="intro text-center">
+          Step into the world of hope and compassion with EasyFinder, a
+          purpose-driven platform committed to reuniting missing individuals
+          with their cherished ones. Our mission lies in weaving together the
+          frayed threads of lives torn apart by absence, by offering a safe
+          haven, a central database where the power of technology meets the
+          yearning of the heart. Through cutting-edge search tools, we navigate
+          the labyrinth of uncertainty, lighting the way towards hopeful
+          reunions. Let EasyFinder be the compass guiding you through the storm,
+          for in unity, we heal, and in hope, we find solace.
+        </p>
+        <div class="row">
+          <div class="item col-lg-4 col-md-6 col-12">
+            <div class="icon-holder">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="content">
+              <h3 class="sub-title">Reunite Hearts</h3>
+              <p>
+                A purpose-driven platform dedicated to reuniting missing
+                individuals with their loved ones. Our advanced search tools are
+                meticulously designed to assist developers in efficiently
+                locating missing persons.
+              </p>
+            </div>
+          </div>
+
+          <div class="item col-lg-4 col-md-6 col-12">
+            <div class="icon-holder">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div class="content">
+              <h3 class="sub-title">Time Saver</h3>
+              <p>
+                easyFinder saves valuable time in the search process. Gain quick
+                access to crucial information, enabling efficient reunification
+                efforts. Seamlessly upload pictures and relevant data to
+                facilitate the search for missing loved ones.
+              </p>
+            </div>
+          </div>
+
+          <div class="item col-lg-4 col-md-6 col-12">
+            <div class="icon-holder">
+              <i class="fa-solid fa-coffee"></i>
+            </div>
+            <div class="content">
+              <h3 class="sub-title">Simplify Search</h3>
+              <p>
+                easyFinder simplifies the search process by enabling users to
+                upload pictures and relevant data. With our platform, you can
+                take an active role in the search for missing family members and
+                friends.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container text-center">
+        <small class="copyright"
+          >Designed with <span class="sr-only">love</span
+          ><i class="fas fa-heart"></i> by
+          <a href="#""
+            >Sharanya - Praneetha - Rahul</a
+          >
+        </small>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EasyFinder</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
+
+    <link
+      href="{{ url_for('static', filename='assets/fonts/lato.txt') }}"
+      rel="stylesheet"
+      type="text"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/fonts/montserrat.txt') }}"
+      rel="stylesheet"
+      type="text"
+    />
+
+    <script async defer src="{{ url_for('static', filename='assets/github/button.js') }}"></script>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}"
+    />
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <link id="theme-style" rel="stylesheet" href="{{ url_for('static', filename='assets/css/theme-1.css') }}"/>
+  </head>
+
+  <body data-spy="scroll">
+     <header id="header" class="header">
+      <nav id="main-nav" class="main-nav navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a class="navbar-brand logo" href="/">
+            <span class="logo-title">easyFinder</span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-collapse"
+            aria-controls="navbar-collapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span></button
+          >
+
+          <div class="navbar-collapse collapse" id="navbar-collapse">
+            <ul id="nav-menu" class="nav navbar-nav ms-md-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/search">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/search_image">ImageSearch</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <br />
+    <br />
+    <br />
+    <h2 class="text-center text-black-50 mx-5 banner">Search Results</h2>
+    
+    <div class="offset-header container bg-success-subtle">
+      <div class="container">
+  {% if results|length == 0 %}
+  <strong class="w-100 text-center d-block my-2">No results found</strong>
+  <a href="/search" class="w-100 text-center d-block my-1 text-primary text-sm">Search Manually</a>
+  {% endif %}
+  <div class="row">
+    {% for result in results %}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+  <div class="card shadow">
+    <img src="{{ result['photo'] }}" alt="Missing Person" class="card-img-top" />
+    <div class="card-body">
+      <h5 class="card-title">{{ result['name'] }}</h5>
+      <p class="card-text mb-1">Age: {{ result['age'] }} yrs</p>
+      <p class="card-text mb-1">Gender: {{ result['gender'] }}</p>
+      <p class="card-text mb-1">Weight: {{ result['weight'] }} kg</p>
+      <p class="card-text mb-1">Height: {{ result['height'] }} ft</p>
+      <p class="card-text mb-1">Description: {{ result['description'] }}</p>
+      <p class="card-text mb-1">Missing Date: {{ result['missing_date'] }}</p>
+    </div>
+  </div>
+</div>
+
+    {% endfor %}
+  </div>
+</div>
+
+    </div>
+    <br/>
+    
+    <footer class="footer">
+      <div class="container text-center">
+        <small class="copyright"
+          >Designed with <span class="sr-only">love</span
+          ><i class="fas fa-heart"></i> by
+          <a href="#""
+            >Sharanya - Praneetha - Rahul</a
+          >
+        </small>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+#! /bash/bin
+
+# run locally
+
+docker_desktop_start="systemctl --user start docker-desktop"
+container_name="ef-instance"
+venv_path=".venv"
+app_script="app.py"
+
+$docker_desktop_start &&
+docker start $container_name &&
+source $venv_path/bin/activate &&
+python $app_script
